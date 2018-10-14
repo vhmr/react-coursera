@@ -17,7 +17,6 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
         this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
@@ -94,10 +93,10 @@ class CommentForm extends Component {
         );
     }
 }
-    function RenderComments ({comment, addComment, dishId}){
+    function RenderComments ({comments, addComment, dishId}){
         let div = "";
-        if (comment != null ) {
-            const commentComponent = comment.map((comment) => {
+        if (comments != null ) {
+            const commentComponent = comments.map((comment) => {
                 return(
                     <li className="list-group" key={comment.id}>
                         <span className="mb-3">{comment.comment}</span>
