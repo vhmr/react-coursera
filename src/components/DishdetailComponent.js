@@ -156,7 +156,7 @@ class CommentForm extends Component {
             );
         }
         else if (props.dish != null)  {
-            return (
+            return  (
                 <div className="container">
                     <div className = "row">
                         <Breadcrumb>
