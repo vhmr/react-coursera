@@ -20,7 +20,8 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
-        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);    }
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);   
+     }
 
      toggleModal() {
         this.setState({
@@ -53,7 +54,7 @@ class CommentForm extends Component {
                         <Row className="form-group">
                             <Label htmlFor="yourname" className="ml-3">Your Name</Label>
                                 <Col md={12}>
-                                    <Control.text model=".yourname" id="yourname"
+                                    <Control.text model=".author" id="yourname"
                                         name="yourname" placeholder="Your Name"
                                         className="form-control"
                                         validators={{
