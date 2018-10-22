@@ -1,20 +1,24 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl';
+import { Fade } from 'react-animation-components';
 
 function RenderLeader(leader) {
     if (leader != null) {
         return(
-            <Media tag="li">
-                <Media left top>
-                    <Media object src="assets/images/alberto.png" alt={leader.leader.name} />
+            <Fade in>
+                <Media tag="li">
+                    <Media left top>
+                        <Media object src={baseUrl + leader.leader.image} alt={baseUrl + leader.leader.name} />
+                    </Media>
+                    <Media body className="ml-5">
+                        <Media heading>{leader.leader.name}</Media>
+                        <p>{leader.leader.designation}</p> 
+                        <p>{leader.leader.description}</p>
+                    </Media>
                 </Media>
-                <Media body className="ml-5">
-                    <Media heading>{leader.leader.name}</Media>
-                    <p>{leader.leader.designation}</p> 
-                    <p>{leader.leader.description}</p>
-                </Media>
-            </Media>
+            </Fade>
             
         );
     } else {
